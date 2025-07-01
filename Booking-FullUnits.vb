@@ -1,4 +1,6 @@
-﻿Imports System.Data.SqlClient
+Option Strict On
+Option Explicit On
+Imports System.Data.SqlClient
 Imports System.Text
 
 Public Class Booking_FullUnits
@@ -453,7 +455,7 @@ tryAgain:
         cmdCEdit.Visible = True
         cmdChange.Visible = showHideSwapBtn(CInt(txtB_ID.Text))
 
-        Command1.Enabled = False
+        btnDeleteBooking.Enabled = False
         lblLabel.Visible = True
     End Sub
     Private Function checkActivity(B_ID As Integer) As Boolean
@@ -575,7 +577,7 @@ tryAgain:
         cmdSave.Enabled = True
         cmdCancel.Enabled = True
         cmdExit.Enabled = True
-        Command1.Enabled = False
+        btnDeleteBooking.Enabled = False
         lblLabel.Visible = True
     End Sub
     Private Function getBookingID() As Integer
@@ -821,7 +823,7 @@ tryAgain:
         cmdNew.Enabled = True
         cmdEdit.Enabled = True
         cmdSave.Enabled = False
-        Command1.Enabled = True
+        btnDeleteBooking.Enabled = True
         Frame1.Enabled = True
         lblLabel.Visible = False
 
@@ -1004,7 +1006,7 @@ tryAgain:
 
 
 
-    Private Sub Command1_Click(sender As Object, e As EventArgs) Handles Command1.Click
+    Private Sub btnDeleteBooking_Click(sender As Object, e As EventArgs) Handles btnDeleteBooking.Click
         If Not ChkAccess(Usr.B_Delete) Then Exit Sub
 
         If String.IsNullOrWhiteSpace(txtB_Number.Text) Then
@@ -1050,7 +1052,7 @@ tryAgain:
 
     End Sub
 
-    Private Sub Command2_Click(sender As Object, e As EventArgs) Handles Command2.Click
+    Private Sub btnEmailStatus_Click(sender As Object, e As EventArgs) Handles btnEmailStatus.Click
         If Not (radioIN.Checked OrElse radioOut.Checked) Then
             MessageBox.Show("Please Choose which Type of Booking and then Proceed.")
             Exit Sub
@@ -1235,7 +1237,7 @@ tryAgain:
         Return sb.ToString()
     End Function
 
-    Private Sub Command4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Command4.Click
+    Private Sub btnUploadUnits_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUploadUnits.Click
         If flagEdit = False Then Exit Sub
 
         Dim checkUnits As Short = getContainersCount()
@@ -1299,7 +1301,7 @@ tryAgain:
         flagEdit = False
         TxtEditCntno.Text = ""
     End Sub
-    Private Sub Command5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Command5.Click
+    Private Sub btnCancelUpload_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCancelUpload.Click
         Frame3.Visible = False
         flagEdit = False
         TxtEditCntno.Text = ""
@@ -1543,7 +1545,7 @@ tryAgain:
         flagNew = False
         flagEdit = False
 
-        Command1.Enabled = True
+        btnDeleteBooking.Enabled = True
         radioIN.Checked = False
         radioOut.Checked = False
 
@@ -1570,18 +1572,18 @@ tryAgain:
         cmdExit.Enabled = True
     End Sub
 
-    Private Sub Option1_CheckedChanged(sender As Object, e As EventArgs) Handles Option1.CheckedChanged
-        If isFormLoading OrElse Not Option1.Checked Then Return
+    Private Sub rdoShowAll_CheckedChanged(sender As Object, e As EventArgs) Handles rdoShowAll.CheckedChanged
+        If isFormLoading OrElse Not rdoShowAll.Checked Then Return
         updateFGBooking()
     End Sub
 
-    Private Sub Option2_CheckedChanged(sender As Object, e As EventArgs) Handles Option2.CheckedChanged
-        If isFormLoading OrElse Not Option2.Checked Then Return
+    Private Sub rdoShowCompleted_CheckedChanged(sender As Object, e As EventArgs) Handles rdoShowCompleted.CheckedChanged
+        If isFormLoading OrElse Not rdoShowCompleted.Checked Then Return
         updateFGBooking()
     End Sub
 
-    Private Sub Option3_CheckedChanged(sender As Object, e As EventArgs) Handles Option3.CheckedChanged
-        If isFormLoading OrElse Not Option3.Checked Then Return
+    Private Sub rdoRunning_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRunning.CheckedChanged
+        If isFormLoading OrElse Not rdoRunning.Checked Then Return
         updateFGBooking()
     End Sub
 
@@ -1754,9 +1756,9 @@ WHERE B_ID <> 0
         Dim whereClause As New List(Of String)
 
         ' Filters
-        If Option2.Checked Then
+        If rdoShowCompleted.Checked Then
             whereClause.Add("Balance = 0")
-        ElseIf Option3.Checked Then
+        ElseIf rdoRunning.Checked Then
             whereClause.Add("Balance <> 0")
         End If
 
@@ -1782,7 +1784,7 @@ WHERE B_ID <> 0
             baseQuery &= " AND " & String.Join(" AND ", whereClause)
         End If
 
-        Text1.Text = baseQuery
+        txtQueryPreview.Text = baseQuery
         Return baseQuery
     End Function
 
