@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Option Strict On
+Option Explicit On
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Booking_FullUnits
     Inherits BaseForm
 
@@ -23,22 +25,22 @@ Partial Class Booking_FullUnits
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Booking_FullUnits))
-        Me.Command3 = New System.Windows.Forms.Button()
-        Me.Option1 = New System.Windows.Forms.RadioButton()
-        Me.Option2 = New System.Windows.Forms.RadioButton()
-        Me.Option3 = New System.Windows.Forms.RadioButton()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.rdoShowAll = New System.Windows.Forms.RadioButton()
+        Me.rdoShowCompleted = New System.Windows.Forms.RadioButton()
+        Me.rdoRunning = New System.Windows.Forms.RadioButton()
         Me.radioAuto = New System.Windows.Forms.RadioButton()
         Me.radioManual = New System.Windows.Forms.RadioButton()
         Me.ComboSearch = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtB_Email = New System.Windows.Forms.TextBox()
         Me.radioIN = New System.Windows.Forms.RadioButton()
-        Me.Command2 = New System.Windows.Forms.Button()
+        Me.btnEmailStatus = New System.Windows.Forms.Button()
         Me.Frame2 = New System.Windows.Forms.Panel()
         Me._Label2_8 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.txtB_ID = New System.Windows.Forms.TextBox()
-        Me.Command1 = New System.Windows.Forms.Button()
+        Me.btnDeleteBooking = New System.Windows.Forms.Button()
         Me.cmdExit = New System.Windows.Forms.Button()
         Me.cmdSave = New System.Windows.Forms.Button()
         Me.cmdCancel = New System.Windows.Forms.Button()
@@ -67,7 +69,7 @@ Partial Class Booking_FullUnits
         Me._Label2_10 = New System.Windows.Forms.Label()
         Me.ComboFromCity = New System.Windows.Forms.ComboBox()
         Me.ComboFromLoc = New System.Windows.Forms.ComboBox()
-        Me.Text1 = New System.Windows.Forms.TextBox()
+        Me.txtQueryPreview = New System.Windows.Forms.TextBox()
         Me.Check1 = New System.Windows.Forms.CheckBox()
         Me.ComboToCity = New System.Windows.Forms.ComboBox()
         Me.picETA = New System.Windows.Forms.Panel()
@@ -92,11 +94,11 @@ Partial Class Booking_FullUnits
         Me.cmdNew = New System.Windows.Forms.Button()
         Me.lblLabel = New System.Windows.Forms.Label()
         Me.txtB_Number = New System.Windows.Forms.TextBox()
-        Me.Command5 = New System.Windows.Forms.Button()
+        Me.btnCancelUpload = New System.Windows.Forms.Button()
         Me.Combo1 = New System.Windows.Forms.ComboBox()
         Me.cmdAddMore = New System.Windows.Forms.Button()
         Me.cmdAddVessel = New System.Windows.Forms.Button()
-        Me.Command4 = New System.Windows.Forms.Button()
+        Me.btnUploadUnits = New System.Windows.Forms.Button()
         Me.Frame3 = New System.Windows.Forms.GroupBox()
         Me.TxtEditCntno = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -113,64 +115,64 @@ Partial Class Booking_FullUnits
         CType(Me.dgBooking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Command3
+        'btnSearch
         '
-        Me.Command3.BackColor = System.Drawing.SystemColors.Control
-        Me.Command3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Command3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Command3.Location = New System.Drawing.Point(796, 5)
-        Me.Command3.Name = "Command3"
-        Me.Command3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Command3.Size = New System.Drawing.Size(75, 42)
-        Me.Command3.TabIndex = 63
-        Me.Command3.Text = "Search"
-        Me.Command3.UseVisualStyleBackColor = False
+        Me.btnSearch.BackColor = System.Drawing.SystemColors.Control
+        Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnSearch.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnSearch.Location = New System.Drawing.Point(796, 5)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnSearch.Size = New System.Drawing.Size(75, 42)
+        Me.btnSearch.TabIndex = 63
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = False
         '
-        'Option1
+        'rdoShowAll
         '
-        Me.Option1.AutoSize = True
-        Me.Option1.BackColor = System.Drawing.SystemColors.Control
-        Me.Option1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Option1.ForeColor = System.Drawing.Color.Blue
-        Me.Option1.Location = New System.Drawing.Point(336, 23)
-        Me.Option1.Name = "Option1"
-        Me.Option1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Option1.Size = New System.Drawing.Size(79, 21)
-        Me.Option1.TabIndex = 23
-        Me.Option1.TabStop = True
-        Me.Option1.Text = "Show All"
-        Me.Option1.UseVisualStyleBackColor = False
+        Me.rdoShowAll.AutoSize = True
+        Me.rdoShowAll.BackColor = System.Drawing.SystemColors.Control
+        Me.rdoShowAll.Cursor = System.Windows.Forms.Cursors.Default
+        Me.rdoShowAll.ForeColor = System.Drawing.Color.Blue
+        Me.rdoShowAll.Location = New System.Drawing.Point(336, 23)
+        Me.rdoShowAll.Name = "rdoShowAll"
+        Me.rdoShowAll.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.rdoShowAll.Size = New System.Drawing.Size(79, 21)
+        Me.rdoShowAll.TabIndex = 23
+        Me.rdoShowAll.TabStop = True
+        Me.rdoShowAll.Text = "Show All"
+        Me.rdoShowAll.UseVisualStyleBackColor = False
         '
-        'Option2
+        'rdoShowCompleted
         '
-        Me.Option2.AutoSize = True
-        Me.Option2.BackColor = System.Drawing.SystemColors.Control
-        Me.Option2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Option2.ForeColor = System.Drawing.Color.Blue
-        Me.Option2.Location = New System.Drawing.Point(421, 23)
-        Me.Option2.Name = "Option2"
-        Me.Option2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Option2.Size = New System.Drawing.Size(133, 21)
-        Me.Option2.TabIndex = 22
-        Me.Option2.TabStop = True
-        Me.Option2.Text = "Show Completed"
-        Me.Option2.UseVisualStyleBackColor = False
+        Me.rdoShowCompleted.AutoSize = True
+        Me.rdoShowCompleted.BackColor = System.Drawing.SystemColors.Control
+        Me.rdoShowCompleted.Cursor = System.Windows.Forms.Cursors.Default
+        Me.rdoShowCompleted.ForeColor = System.Drawing.Color.Blue
+        Me.rdoShowCompleted.Location = New System.Drawing.Point(421, 23)
+        Me.rdoShowCompleted.Name = "rdoShowCompleted"
+        Me.rdoShowCompleted.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.rdoShowCompleted.Size = New System.Drawing.Size(133, 21)
+        Me.rdoShowCompleted.TabIndex = 22
+        Me.rdoShowCompleted.TabStop = True
+        Me.rdoShowCompleted.Text = "Show Completed"
+        Me.rdoShowCompleted.UseVisualStyleBackColor = False
         '
-        'Option3
+        'rdoRunning
         '
-        Me.Option3.AutoSize = True
-        Me.Option3.BackColor = System.Drawing.SystemColors.Control
-        Me.Option3.Checked = True
-        Me.Option3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Option3.ForeColor = System.Drawing.Color.Blue
-        Me.Option3.Location = New System.Drawing.Point(560, 23)
-        Me.Option3.Name = "Option3"
-        Me.Option3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Option3.Size = New System.Drawing.Size(80, 21)
-        Me.Option3.TabIndex = 21
-        Me.Option3.TabStop = True
-        Me.Option3.Text = "Running"
-        Me.Option3.UseVisualStyleBackColor = False
+        Me.rdoRunning.AutoSize = True
+        Me.rdoRunning.BackColor = System.Drawing.SystemColors.Control
+        Me.rdoRunning.Checked = True
+        Me.rdoRunning.Cursor = System.Windows.Forms.Cursors.Default
+        Me.rdoRunning.ForeColor = System.Drawing.Color.Blue
+        Me.rdoRunning.Location = New System.Drawing.Point(560, 23)
+        Me.rdoRunning.Name = "rdoRunning"
+        Me.rdoRunning.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.rdoRunning.Size = New System.Drawing.Size(80, 21)
+        Me.rdoRunning.TabIndex = 21
+        Me.rdoRunning.TabStop = True
+        Me.rdoRunning.Text = "Running"
+        Me.rdoRunning.UseVisualStyleBackColor = False
         '
         'radioAuto
         '
@@ -252,26 +254,26 @@ Partial Class Booking_FullUnits
         Me.radioIN.Text = "Gatein"
         Me.radioIN.UseVisualStyleBackColor = False
         '
-        'Command2
+        'btnEmailStatus
         '
-        Me.Command2.BackColor = System.Drawing.SystemColors.Control
-        Me.Command2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Command2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Command2.Location = New System.Drawing.Point(608, 8)
-        Me.Command2.Name = "Command2"
-        Me.Command2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Command2.Size = New System.Drawing.Size(89, 33)
-        Me.Command2.TabIndex = 48
-        Me.Command2.Text = "Email Status"
-        Me.Command2.UseVisualStyleBackColor = False
+        Me.btnEmailStatus.BackColor = System.Drawing.SystemColors.Control
+        Me.btnEmailStatus.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnEmailStatus.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEmailStatus.Location = New System.Drawing.Point(608, 8)
+        Me.btnEmailStatus.Name = "btnEmailStatus"
+        Me.btnEmailStatus.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnEmailStatus.Size = New System.Drawing.Size(89, 33)
+        Me.btnEmailStatus.TabIndex = 48
+        Me.btnEmailStatus.Text = "Email Status"
+        Me.btnEmailStatus.UseVisualStyleBackColor = False
         '
         'Frame2
         '
         Me.Frame2.BackColor = System.Drawing.SystemColors.Control
-        Me.Frame2.Controls.Add(Me.Command3)
-        Me.Frame2.Controls.Add(Me.Option1)
-        Me.Frame2.Controls.Add(Me.Option2)
-        Me.Frame2.Controls.Add(Me.Option3)
+        Me.Frame2.Controls.Add(Me.btnSearch)
+        Me.Frame2.Controls.Add(Me.rdoShowAll)
+        Me.Frame2.Controls.Add(Me.rdoShowCompleted)
+        Me.Frame2.Controls.Add(Me.rdoRunning)
         Me.Frame2.Controls.Add(Me.ComboSearch)
         Me.Frame2.Controls.Add(Me.Label3)
         Me.Frame2.Controls.Add(Me._Label2_8)
@@ -328,18 +330,18 @@ Partial Class Booking_FullUnits
         Me.txtB_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtB_ID.Visible = False
         '
-        'Command1
+        'btnDeleteBooking
         '
-        Me.Command1.BackColor = System.Drawing.SystemColors.Control
-        Me.Command1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Command1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Command1.Location = New System.Drawing.Point(296, 8)
-        Me.Command1.Name = "Command1"
-        Me.Command1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Command1.Size = New System.Drawing.Size(89, 33)
-        Me.Command1.TabIndex = 45
-        Me.Command1.Text = "Delete Booking"
-        Me.Command1.UseVisualStyleBackColor = False
+        Me.btnDeleteBooking.BackColor = System.Drawing.SystemColors.Control
+        Me.btnDeleteBooking.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnDeleteBooking.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnDeleteBooking.Location = New System.Drawing.Point(296, 8)
+        Me.btnDeleteBooking.Name = "btnDeleteBooking"
+        Me.btnDeleteBooking.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnDeleteBooking.Size = New System.Drawing.Size(89, 33)
+        Me.btnDeleteBooking.TabIndex = 45
+        Me.btnDeleteBooking.Text = "Delete Booking"
+        Me.btnDeleteBooking.UseVisualStyleBackColor = False
         '
         'cmdExit
         '
@@ -694,18 +696,18 @@ Partial Class Booking_FullUnits
         Me.ComboFromLoc.Size = New System.Drawing.Size(129, 24)
         Me.ComboFromLoc.TabIndex = 68
         '
-        'Text1
+        'txtQueryPreview
         '
-        Me.Text1.AcceptsReturn = True
-        Me.Text1.BackColor = System.Drawing.SystemColors.Window
-        Me.Text1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Text1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Text1.Location = New System.Drawing.Point(204, 671)
-        Me.Text1.MaxLength = 0
-        Me.Text1.Name = "Text1"
-        Me.Text1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Text1.Size = New System.Drawing.Size(297, 24)
-        Me.Text1.TabIndex = 115
+        Me.txtQueryPreview.AcceptsReturn = True
+        Me.txtQueryPreview.BackColor = System.Drawing.SystemColors.Window
+        Me.txtQueryPreview.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtQueryPreview.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtQueryPreview.Location = New System.Drawing.Point(204, 671)
+        Me.txtQueryPreview.MaxLength = 0
+        Me.txtQueryPreview.Name = "txtQueryPreview"
+        Me.txtQueryPreview.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtQueryPreview.Size = New System.Drawing.Size(297, 24)
+        Me.txtQueryPreview.TabIndex = 115
         '
         'Check1
         '
@@ -981,8 +983,8 @@ Partial Class Booking_FullUnits
         '
         Me.Picture1.BackColor = System.Drawing.SystemColors.Control
         Me.Picture1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Picture1.Controls.Add(Me.Command2)
-        Me.Picture1.Controls.Add(Me.Command1)
+        Me.Picture1.Controls.Add(Me.btnEmailStatus)
+        Me.Picture1.Controls.Add(Me.btnDeleteBooking)
         Me.Picture1.Controls.Add(Me.cmdExit)
         Me.Picture1.Controls.Add(Me.cmdSave)
         Me.Picture1.Controls.Add(Me.cmdCancel)
@@ -1043,18 +1045,18 @@ Partial Class Booking_FullUnits
         Me.txtB_Number.Text = "Text1"
         Me.txtB_Number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Command5
+        'btnCancelUpload
         '
-        Me.Command5.BackColor = System.Drawing.SystemColors.Control
-        Me.Command5.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Command5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Command5.Location = New System.Drawing.Point(128, 248)
-        Me.Command5.Name = "Command5"
-        Me.Command5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Command5.Size = New System.Drawing.Size(105, 33)
-        Me.Command5.TabIndex = 53
-        Me.Command5.Text = "Cancel"
-        Me.Command5.UseVisualStyleBackColor = False
+        Me.btnCancelUpload.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCancelUpload.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnCancelUpload.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnCancelUpload.Location = New System.Drawing.Point(128, 248)
+        Me.btnCancelUpload.Name = "btnCancelUpload"
+        Me.btnCancelUpload.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnCancelUpload.Size = New System.Drawing.Size(105, 33)
+        Me.btnCancelUpload.TabIndex = 53
+        Me.btnCancelUpload.Text = "Cancel"
+        Me.btnCancelUpload.UseVisualStyleBackColor = False
         '
         'Combo1
         '
@@ -1096,24 +1098,24 @@ Partial Class Booking_FullUnits
         Me.cmdAddVessel.UseVisualStyleBackColor = False
         Me.cmdAddVessel.Visible = False
         '
-        'Command4
+        'btnUploadUnits
         '
-        Me.Command4.BackColor = System.Drawing.SystemColors.Control
-        Me.Command4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Command4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Command4.Location = New System.Drawing.Point(16, 248)
-        Me.Command4.Name = "Command4"
-        Me.Command4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Command4.Size = New System.Drawing.Size(105, 33)
-        Me.Command4.TabIndex = 52
-        Me.Command4.Text = "Upload Units"
-        Me.Command4.UseVisualStyleBackColor = False
+        Me.btnUploadUnits.BackColor = System.Drawing.SystemColors.Control
+        Me.btnUploadUnits.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnUploadUnits.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnUploadUnits.Location = New System.Drawing.Point(16, 248)
+        Me.btnUploadUnits.Name = "btnUploadUnits"
+        Me.btnUploadUnits.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnUploadUnits.Size = New System.Drawing.Size(105, 33)
+        Me.btnUploadUnits.TabIndex = 52
+        Me.btnUploadUnits.Text = "Upload Units"
+        Me.btnUploadUnits.UseVisualStyleBackColor = False
         '
         'Frame3
         '
         Me.Frame3.BackColor = System.Drawing.SystemColors.Control
-        Me.Frame3.Controls.Add(Me.Command5)
-        Me.Frame3.Controls.Add(Me.Command4)
+        Me.Frame3.Controls.Add(Me.btnCancelUpload)
+        Me.Frame3.Controls.Add(Me.btnUploadUnits)
         Me.Frame3.Controls.Add(Me.TxtEditCntno)
         Me.Frame3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Frame3.Location = New System.Drawing.Point(208, 402)
@@ -1205,7 +1207,7 @@ Partial Class Booking_FullUnits
         Me.Controls.Add(Me.Label2_12)
         Me.Controls.Add(Me.Label2_11)
         Me.Controls.Add(Me._Label2_10)
-        Me.Controls.Add(Me.Text1)
+        Me.Controls.Add(Me.txtQueryPreview)
         Me.Controls.Add(Me.Check1)
         Me.Controls.Add(Me.picETA)
         Me.Controls.Add(Me.Frame1)
@@ -1241,21 +1243,21 @@ Partial Class Booking_FullUnits
         Me.PerformLayout()
 
     End Sub
-    Public WithEvents Command3 As Button
-    Public WithEvents Option1 As RadioButton
-    Public WithEvents Option2 As RadioButton
-    Public WithEvents Option3 As RadioButton
+    Public WithEvents btnSearch As Button
+    Public WithEvents rdoShowAll As RadioButton
+    Public WithEvents rdoShowCompleted As RadioButton
+    Public WithEvents rdoRunning As RadioButton
     Public WithEvents radioAuto As RadioButton
     Public WithEvents radioManual As RadioButton
     Public WithEvents ComboSearch As ComboBox
     Public WithEvents Label3 As Label
     Public WithEvents txtB_Email As TextBox
     Public WithEvents radioIN As RadioButton
-    Public WithEvents Command2 As Button
+    Public WithEvents btnEmailStatus As Button
     Public WithEvents Frame2 As Panel
     Public WithEvents _Label2_8 As Label
     Public WithEvents txtB_ID As TextBox
-    Public WithEvents Command1 As Button
+    Public WithEvents btnDeleteBooking As Button
     Public WithEvents cmdExit As Button
     Public WithEvents cmdSave As Button
     Public WithEvents cmdCancel As Button
@@ -1284,7 +1286,7 @@ Partial Class Booking_FullUnits
     Public WithEvents _Label2_10 As Label
     Public WithEvents ComboFromCity As ComboBox
     Public WithEvents ComboFromLoc As ComboBox
-    Public WithEvents Text1 As TextBox
+    Public WithEvents txtQueryPreview As TextBox
     Public WithEvents Check1 As CheckBox
     Public WithEvents ComboToCity As ComboBox
     Public WithEvents picETA As Panel
@@ -1309,12 +1311,12 @@ Partial Class Booking_FullUnits
     Public WithEvents cmdNew As Button
     Public WithEvents lblLabel As Label
     Public WithEvents txtB_Number As TextBox
-    Public WithEvents Command5 As Button
+    Public WithEvents btnCancelUpload As Button
     Public WithEvents txtSearch As TextBox
     Public WithEvents Combo1 As ComboBox
     Public WithEvents cmdAddMore As Button
     Public WithEvents cmdAddVessel As Button
-    Public WithEvents Command4 As Button
+    Public WithEvents btnUploadUnits As Button
     Public WithEvents Frame3 As GroupBox
     Public WithEvents TxtEditCntno As TextBox
     Public WithEvents Label1 As Label
